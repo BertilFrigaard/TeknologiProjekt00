@@ -1,18 +1,22 @@
-let test
+let player;
+let children = [];
 
 function setup() 
 {
 	createCanvas(1000, 1000);
-    test = new Player(400,400,Math.PI*0.5,250);
+    player = new Player(400,400,Math.PI*0.5,250);
+}
+
+function addChild() {
+    randint = Math.floor(Math.random()*4)
 }
 
 function draw()
 {
     //UPDATE
-    test.update(0.016)
-    test.changeDirection(Math.PI*0.016*0.5)
+    player.update(0.016)
 
     //DRAW
     background(220,220,220)
-    test.draw()
+    player.draw()
 }
