@@ -1,6 +1,7 @@
 class Child extends MovingObject {
     constructor(x, y, direction, speed) {
         super(x, y, direction, speed);
+        this.image = IMAGE_Children[Math.floor(Math.random()*2)]
         this.alive = true;
     }
     isAlive() {
@@ -24,5 +25,13 @@ class Child extends MovingObject {
             //Out of bonds TOP
             this.alive = false;
         }
+    }
+    draw() {
+        push()
+        translate(this.x, this.y);
+        imageMode(CENTER);
+        rotate(this.direction)
+        image(this.image, 0, 0)
+        pop()
     }
 }

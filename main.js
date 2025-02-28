@@ -1,4 +1,5 @@
 let FONT_PressStart2P;
+let IMAGE_Children;
 
 let player;
 let children;
@@ -8,6 +9,12 @@ let countdown;
 
 function preload() {
     FONT_PressStart2P = loadFont("/assets/PressStart2P-Regular.ttf");
+    IMAGE_Children = [];
+    let toLoad = ["Child1.png", "Child2.png"]
+    for(let i = 0; i < toLoad.length; i++) {
+        let img = loadImage("/assets/" + toLoad[i]);
+        IMAGE_Children.push(img);
+    }
 }
 
 function setup() {
@@ -47,7 +54,7 @@ function draw() {
     countdown -= deltaTime
 
     //DRAW
-    background(220,220,220)
+    background(70, 147, 9)
     player.draw(deltaTime)
     for(let i = 0; i < children.length; i++) {
         children[i].draw()
