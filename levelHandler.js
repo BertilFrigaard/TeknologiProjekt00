@@ -1,6 +1,6 @@
 //Handles children and bonus object handling
 function childrenOverTime(time) {
-    return Math.floor(time*0.1+1)
+    return Math.floor(time*0.1+3)
 }
 
 function updateLevel(updateTime) {

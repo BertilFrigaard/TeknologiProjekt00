@@ -3,6 +3,7 @@ class Child extends MovingObject {
         super(x, y, direction, speed);
         this.image = IMAGE_Children[Math.floor(Math.random()*2)]
         this.alive = true;
+        this.diameter = 80;
     }
     isAlive() {
         return this.alive;
@@ -31,7 +32,7 @@ class Child extends MovingObject {
         translate(this.x, this.y);
         imageMode(CENTER);
         rotate(this.direction + Math.PI/2)
-        image(this.image, 0, 0)
+        image(this.image, 0, 0, 80, 80)
         pop()
     }
 }
