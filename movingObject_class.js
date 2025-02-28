@@ -10,8 +10,9 @@ class MovingObject{
         this.x += deltaTime * Math.cos(this.direction) * this.speed;
         this.y += deltaTime * Math.sin(this.direction + Math.PI) * this.speed;
     }
+    
     draw() {
         fill(255,150,150);
-        circle(x, y, 30);
+        circle(this.x, this.y, 30);
     }
 }
