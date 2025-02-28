@@ -5,7 +5,7 @@ function setup()
 {
 	createCanvas(1000, 1000);
     children = [];
-    player = new Player(400,400,Math.PI*0.5,250);
+    player = new Player(400,400,Math.PI*0.5,1000);
 }
 
 function addChild() {
@@ -51,6 +51,7 @@ function draw()
     let deltaTime = 0.016;
     //UPDATE
     player.update(deltaTime)
+    player.changeDirection(deltaTime)
     for(let i = 0; i < children.length; i++) {
         children[i].update(deltaTime)
     }

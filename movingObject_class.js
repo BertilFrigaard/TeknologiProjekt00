@@ -5,6 +5,7 @@ class MovingObject{
         this.direction = direction;
         this.speed = speed;
     }
+    
     update(deltaTime) {
         this.x += deltaTime * Math.cos(this.direction) * this.speed;
         this.y += deltaTime * Math.sin(this.direction + Math.PI) * this.speed;
