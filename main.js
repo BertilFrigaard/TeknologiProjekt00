@@ -1,8 +1,10 @@
 let FONT_PressStart2P;
 let IMAGE_Children;
+let IMAGE_Others;
 
 let player;
 let children;
+let particles;
 
 let time;
 let countdown;
@@ -10,16 +12,24 @@ let countdown;
 function preload() {
     FONT_PressStart2P = loadFont("/assets/PressStart2P-Regular.ttf");
     IMAGE_Children = [];
+    IMAGE_Others = [];
     let toLoad = ["Child1.png", "Child2.png"]
     for(let i = 0; i < toLoad.length; i++) {
         let img = loadImage("/assets/" + toLoad[i]);
         IMAGE_Children.push(img);
+    }
+    
+    toLoad = ["splat.png"]
+    for(let i = 0; i < toLoad.length; i++) {
+        let img = loadImage("/assets/" + toLoad[i]);
+        IMAGE_Others.push(img);
     }
 }
 
 function setup() {
 	createCanvas(1000, 1000);
     children = [];
+    particles = [];
     player = new Player(400,400,Math.PI*0.5,1000);
     time = 0;
     countdown = 20;
@@ -55,6 +65,13 @@ function draw() {
 
     //DRAW
     background(70, 147, 9)
+    for(let i = particles.length - 1; i > -1; i--) {
+        if(particles[i].alive) {
+            particles[i].draw(deltaTime);
+        } else {
+            particles.splice(i, 1);
+        }
+    }
     player.draw(deltaTime)
     for(let i = 0; i < children.length; i++) {
         children[i].draw()

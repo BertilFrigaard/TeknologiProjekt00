@@ -12,6 +12,17 @@ class Player extends MovingObject
         super.update(deltaTime);
         this.changeDirection(deltaTime);
         this.resolveOutOfBounds();
+        for(let i = 0; i < children.length; i++) {
+            if(this.circleCollision(this, children[i])){
+                particles.push(new SplatParticle(children[i].x, children[i].y))
+                children[i].alive = false
+            }
+        }
+
+    }
+    circleCollision(obj1, obj2){
+        let dist = Math.sqrt((obj2.x - obj1.x)**2 + (obj2.y - obj1.y)**2);
+        return dist < obj2.diameter/2 + obj1.diameter/2;
     }
     resolveOutOfBounds() {
         if(this.x > 1000 - this.diameter/2) {
