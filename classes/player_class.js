@@ -16,6 +16,7 @@ class Player extends MovingObject
             if(this.circleCollision(this, children[i])){
                 particles.push(new SplatParticle(children[i].x, children[i].y))
                 children[i].alive = false
+                countdown -= 5
             }
         }
 
