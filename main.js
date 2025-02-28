@@ -9,7 +9,7 @@ function setup()
 }
 
 function addChild() {
-    speed = 50;
+    speed = 120;
     direction = 0;
     startX = 0;
     startY = 0;
@@ -42,7 +42,7 @@ function addChild() {
     }
 
     direction += Math.random()*Math.PI;
-    children.push(new MovingObject(startX, startY, direction, speed))
+    children.push(new Child(startX, startY, direction, speed))
 
 }
 
@@ -51,15 +51,18 @@ function draw()
     let deltaTime = 0.016;
     //UPDATE
     player.update(deltaTime)
-    for(let i = 0; i < children.length; i++) {
-        children[i].update(deltaTime)
+    for(let i = children.length - 1; i > -1; i--) {
+        if(children[i].isAlive()) {
+            children[i].update(deltaTime);
+        } else {
+            children.splice(i, 1);
+        }
     }
 
     //DRAW
     background(220,220,220)
     player.draw(deltaTime)
     for(let i = 0; i < children.length; i++) {
-        console.log(i)
         children[i].draw()
     }
 }
