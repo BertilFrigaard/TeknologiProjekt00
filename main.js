@@ -13,8 +13,10 @@ function addChild() {
 
 function draw()
 {
+    let deltaTime = 0.016;
     //UPDATE
-    player.update(0.016)
+    player.update(deltaTime)
+    player.changeDirection(0.000001)
 
     //DRAW
     background(220,220,220)

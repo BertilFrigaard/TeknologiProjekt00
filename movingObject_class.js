@@ -1,16 +1,14 @@
 class MovingObject{
     constructor(x, y, direction, speed) {
-        self.x = x;
-        self.y = y;
-        self.direction = direction;
-        self.speed = speed;
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+        this.speed = speed;
     }
-    changeDirection(change) {
-        self.direction += change
-    }
+
     update(deltaTime) {
-        self.x += deltaTime * Math.cos(self.direction) * self.speed;
-        self.y += deltaTime * Math.sin(self.direction + Math.PI) * self.speed;
+        this.x += deltaTime * Math.cos(this.direction) * this.speed;
+        this.y += deltaTime * Math.sin(this.direction + Math.PI) * this.speed;
     }
     draw() {
         fill(255,150,150);
