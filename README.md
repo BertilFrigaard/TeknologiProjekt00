@@ -1,2 +1,3 @@
 # TeknologiProjekt00
 TryNotToRunOverTheChildrenWhileABombTicksDown
+Af Bertil og Thomas
