@@ -57,7 +57,7 @@ function draw()
 
     //DRAW
     background(220,220,220)
-    player.draw()
+    player.draw(deltaTime)
     for(let i = 0; i < children.length; i++) {
         console.log(i)
         children[i].draw()
