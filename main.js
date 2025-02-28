@@ -3,7 +3,7 @@ let test
 function setup() 
 {
 	createCanvas(1000, 1000);
-    test = new MovingObject(400,400,Math.PI*0.5,250);
+    test = new Player(400,400,Math.PI*0.5,250);
 }
 
 function draw()
