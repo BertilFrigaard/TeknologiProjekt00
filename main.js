@@ -5,7 +5,7 @@ function setup()
 {
 	createCanvas(1000, 1000);
     children = [];
-    player = new Player(400,400,Math.PI*0.5,250);
+    player = new Player(400,400,Math.PI*0.5,1000);
 }
 
 function addChild() {
