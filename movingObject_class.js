@@ -9,7 +9,7 @@ class MovingObject{
     
     update(deltaTime) {
         this.x += deltaTime * Math.cos(this.direction) * this.speed;
-        this.y += deltaTime * Math.sin(this.direction + Math.PI) * this.speed;
+        this.y += deltaTime * Math.sin(this.direction) * this.speed;
     }
 
     draw() {

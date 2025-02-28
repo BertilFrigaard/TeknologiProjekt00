@@ -30,7 +30,7 @@ class Child extends MovingObject {
         push()
         translate(this.x, this.y);
         imageMode(CENTER);
-        rotate(this.direction)
+        rotate(this.direction + Math.PI/2)
         image(this.image, 0, 0)
         pop()
     }
