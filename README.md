@@ -1,0 +1,2 @@
+# TeknologiProjekt00
+TryNotToRunOverTheChildrenWhileABombTicksDown
