@@ -48,15 +48,16 @@ function addChild() {
 
 function draw()
 {
+    let deltaTime = 0.016;
     //UPDATE
-    //player.update(0.016)
+    player.update(deltaTime)
     for(let i = 0; i < children.length; i++) {
-        children[i].update(0.016)
+        children[i].update(deltaTime)
     }
 
     //DRAW
     background(220,220,220)
-    //player.draw()
+    player.draw()
     for(let i = 0; i < children.length; i++) {
         console.log(i)
         children[i].draw()
