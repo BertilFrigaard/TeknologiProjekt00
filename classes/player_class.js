@@ -19,6 +19,12 @@ class Player extends MovingObject
                 countdown -= 5
             }
         }
+        for(let i = 0; i < lollipops.length; i++) {
+            if(this.circleCollision(this, lollipops[i])){
+                lollipops[i].alive = false
+                countdown += 5
+            }
+        }
 
     }
     circleCollision(obj1, obj2){

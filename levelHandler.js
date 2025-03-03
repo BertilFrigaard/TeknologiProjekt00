@@ -8,6 +8,15 @@ function updateLevel(updateTime) {
     while(children.length < childrenAtTime) {
         addChild(100)
     }
+    let lollipopsAtTime = 1;
+    while(lollipops.length < lollipopsAtTime) {
+        addLollipop()
+    }
+}
+
+function addLollipop() {
+    let lollipop = new Lollipop(Math.random()*800+100,Math.random()*800+100,Math.PI*(Math.random()*0.5+1));
+    lollipops.push(lollipop);
 }
 
 function addChild(speed) {

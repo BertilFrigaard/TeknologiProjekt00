@@ -5,6 +5,7 @@ let IMAGE_Others;
 let player;
 let children;
 let particles;
+let lollipops;
 
 let running;
 let time;
@@ -20,7 +21,7 @@ function preload() {
         IMAGE_Children.push(img);
     }
     
-    toLoad = ["splat.png", "explosion.png"]
+    toLoad = ["splat.png", "explosion.png", "Lollipop.png"]
     for(let i = 0; i < toLoad.length; i++) {
         let img = loadImage("/assets/" + toLoad[i]);
         IMAGE_Others.push(img);
@@ -31,6 +32,7 @@ function setup() {
 	createCanvas(1000, 1000);
     children = [];
     particles = [];
+    lollipops = [];
     player = new Player(400,400,Math.PI*0.5,1000);
     time = 0;
     countdown = 20;
@@ -85,6 +87,14 @@ function draw() {
         player.draw(deltaTime)
         for(let i = 0; i < children.length; i++) {
             children[i].draw()
+        }
+        
+        for(let i = lollipops.length - 1; i > -1; i--) {
+            if(lollipops[i].isAlive()) {
+                lollipops[i].draw();
+            } else {
+                lollipops.splice(i, 1);
+            }
         }
         drawUI()
     } else {
