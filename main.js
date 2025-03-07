@@ -21,7 +21,7 @@ function preload() {
         IMAGE_Children.push(img);
     }
     
-    toLoad = ["splat.png", "explosion.png", "Lollipop.png"]
+    toLoad = ["splat.png", "explosion.png", "Lollipop.png", "car.png"]
     for(let i = 0; i < toLoad.length; i++) {
         let img = loadImage("/assets/" + toLoad[i]);
         IMAGE_Others.push(img);

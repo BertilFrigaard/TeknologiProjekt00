@@ -2,11 +2,15 @@ class Player extends MovingObject
 {
     constructor(x, y, direction, speed) {
         super(x, y, direction, speed)
-        this.diameter = 50;
+        this.diameter = 60;
     }
     draw(){
-        fill('Blue');
-        circle(this.x,this.y,50);
+        push()
+        translate(this.x, this.y);
+        imageMode(CENTER);
+        rotate(this.direction + Math.PI/2)
+        image(IMAGE_Others[3], 0, 0, 120, 120)
+        pop()
     } 
     update(deltaTime) {
         super.update(deltaTime);
