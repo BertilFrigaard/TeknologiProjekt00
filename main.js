@@ -33,10 +33,10 @@ function setup() {
     children = [];
     particles = [];
     lollipops = [];
-    player = new Player(400,400,Math.PI*0.5,1000);
+    player = new Player(400,400,Math.PI*0.5,750);
     time = 0;
     countdown = 20;
-    running = true
+    running = true;
 }
 
 function getScore() {
