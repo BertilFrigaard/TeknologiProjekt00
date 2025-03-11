@@ -21,7 +21,7 @@ function preload() {
         IMAGE_Children.push(img);
     }
     
-    toLoad = ["splat.png", "explosion.png", "Lollipop.png", "car.png"]
+    toLoad = ["splat.png", "explosion.png", "Lollipop.png", "car.png", "morten.png"]
     for(let i = 0; i < toLoad.length; i++) {
         let img = loadImage("/assets/" + toLoad[i]);
         IMAGE_Others.push(img);
@@ -33,7 +33,7 @@ function setup() {
     children = [];
     particles = [];
     lollipops = [];
-    player = new Player(400,400,Math.PI*0.5,750);
+    player = new Player(400,400,Math.PI*0.5,2000);
     time = 0;
     countdown = 20;
     running = true;
@@ -114,6 +114,12 @@ function draw() {
             text("SCORE: " + Math.floor(getScore()/10)*10, 505, 505)
             fill("red")
             text("SCORE: " + Math.floor(getScore()/10)*10, 500, 500)
+            
+            image(IMAGE_Others[4], 0, 0, 200, 200)
+            textAlign(LEFT)
+            textSize(25)
+            fill("black")
+            text("DØ BØRN! DØØØ!", 200, 100)
         }
     }
 }

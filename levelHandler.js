@@ -1,12 +1,16 @@
 //Handles children and bonus object handling
 function childrenOverTime(time) {
-    return Math.floor(0.1**time+3)
+    return Math.floor(1.1**time+3)
+}
+
+function speedOverTime(time) {
+    return Math.floor(time+100)
 }
 
 function updateLevel(updateTime) {
     let childrenAtTime = childrenOverTime(updateTime);
     while(children.length < childrenAtTime) {
-        addChild(100)
+        addChild(speedOverTime(time))
     }
     let lollipopsAtTime = 1;
     while(lollipops.length < lollipopsAtTime) {
